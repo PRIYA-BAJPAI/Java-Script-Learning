@@ -1,0 +1,21 @@
+#countlabel{
+    display: block;
+    text-align: center;
+    font-size: 10em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#btn{
+    text-align: center;
+}
+.buttons{
+    padding: 10px 20px;
+    font-size: 1.5em;
+    color: aliceblue;
+    background-color: rgb(124, 124, 179);
+    border-radius: 8px;
+    cursor:pointer;
+    transition: background-color 0.25s;
+}
+.buttons:hover{
+    background-color: blue;
+}
