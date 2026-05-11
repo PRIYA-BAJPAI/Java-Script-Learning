@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[1,2,3,4,5,6]
+        arr.push(7)
+        console.log(arr)
+        arr.pop();
+        console.log(arr)
+        arr.unshift(8)
+        console.log(arr)
+        arr.shift()
+        console.log(arr)
+        let include=arr.includes(10)
+        console.log(include)
+        console.log(arr.includes(5))
+        console.log("index",arr.indexOf(5))
+
+        let data=arr.find(function(a){
+            return a==5
+        })
+        console.log(data)
+
+        let data1=arr.forEach((a,b,c)=>{
+            console.log(a,"value")
+        })
+
+        let map=arr.map((a,b,c)=>{
+            return b
+        })
+        console.log(map,"map")
+
+        let filter=arr.filter((a,b,c)=>{
+            return a>2
+        })
+        console.log(filter,"filter")
+
+    </script>
+</body>
+</html>
