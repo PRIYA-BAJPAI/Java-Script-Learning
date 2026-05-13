@@ -72,6 +72,13 @@ function update(){
             gameOver='true'
         }
     }
+    // check body collision
+for(let part of snakecell){
+    if(part[0] == newX && part[1] == newY){
+        gameOver = 'true'
+    }
+}
+
     snakecell.push([newX,newY])
     if(newX==randomCell[0]&&newY==randomCell[1]){
         randomCell=generateR()
