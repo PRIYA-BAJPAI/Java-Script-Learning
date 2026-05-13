@@ -2,7 +2,13 @@ let canvas=document.querySelector("canvas")
 let pen=canvas.getContext("2d")  //selects which type of canvas we want
 let snakecell=[[0,0]]
 let cell=50
-let direction='right'
+let direction='right'  
+let gameOver='false'
+let id=setInterval(()=>{
+    draw();
+    update()
+},200)
+
 document.addEventListener("keydown",(e)=>{
     if(e.key=='ArrowUp'){
         direction='up'
@@ -15,8 +21,12 @@ document.addEventListener("keydown",(e)=>{
     }
 })
 function draw(){
+    if(gameOver=='true'){  //to limit at the boundries
+        clearInterval(id);
+        return;
+    }
     pen.fillStyle="brown"  //to provide colour to snake
-    pen.clearRect(0,0,1000,800) //todelete the canvas before the creation of new rectangle so that we can see the moving snake
+    pen.clearRect(0,0,1000,600) //todelete the canvas before the creation of new rectangle so that we can see the moving snake
     for(let a of snakecell){
         pen.fillRect(a[0],a[1],cell,cell)  //snake body of rectangle shape a[0],a[1] ->initial point of snake 50,50->size of snake
     }
@@ -31,21 +41,30 @@ function update(){
     if(direction=='right'){
         newX=headX+cell
         newY=headY
+        if(newX==1000){
+            gameOver='true'
+        }
     }else if(direction=='left'){
         newX=headX-cell
         newY=headY
+        if(newX<0){
+            gameOver='true'
+        }
     }else if(direction=='up'){
         newX=headX
         newY=headY-cell
+        if(newY<0){
+            gameOver='true'
+        }
     }else{
         newX=headX
         newY=headY+cell
+        if(newY==600){
+            gameOver='true'
+        }
     }
     snakecell.push([newX,newY])
     snakecell.shift(); //to shift the rect
 } 
 
-setInterval(()=>{
-    draw();
-    update()
-},200)
+
