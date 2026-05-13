@@ -4,12 +4,13 @@ let snakecell=[[0,0]]
 let cell=50
 let direction='right'  
 let gameOver='false'
+let randomCell=generateR()
+let score=0
 let id=setInterval(()=>{
     draw();
     update()
 },200)
-
-document.addEventListener("keydown",(e)=>{
+ document.addEventListener("keydown",(e)=>{
     if(e.key=='ArrowUp'){
         direction='up'
     }else if(e.key=='ArrowDown'){
@@ -23,6 +24,9 @@ document.addEventListener("keydown",(e)=>{
 function draw(){
     if(gameOver=='true'){  //to limit at the boundries
         clearInterval(id);
+        pen.fillStyle="black"
+        pen.font="40px sans-sarif"
+        pen.fillText("Game Over!!",100,100)
         return;
     }
     pen.fillStyle="brown"  //to provide colour to snake
@@ -30,6 +34,11 @@ function draw(){
     for(let a of snakecell){
         pen.fillRect(a[0],a[1],cell,cell)  //snake body of rectangle shape a[0],a[1] ->initial point of snake 50,50->size of snake
     }
+    pen.fillStyle="black"
+    pen.font="40px sans-sarif"
+    pen.fillText(`${score}`,50,50)
+    pen.fillStyle='blue';
+    pen.fillRect(randomCell[0],randomCell[1],cell,cell)
 }
 
 // draw()
@@ -64,7 +73,19 @@ function update(){
         }
     }
     snakecell.push([newX,newY])
-    snakecell.shift(); //to shift the rect
+    if(newX==randomCell[0]&&newY==randomCell[1]){
+        randomCell=generateR()
+        score++
+    }else{
+        snakecell.shift(); //to shift the rect
+    }
+    
 } 
+function generateR(){
+    return[
+        Math.floor(Math.random()*950/cell)*cell,
+        Math.floor(Math.random()*550/cell)*cell
+    ]
+}
 
 
