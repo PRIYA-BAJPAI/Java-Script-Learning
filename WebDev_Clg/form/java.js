@@ -11,6 +11,7 @@ form.addEventListener("submit",(e)=>{
         pass:form[2].value
     }
     localStorage.setItem('data',JSON.stringify(userdata))
+    alert("REFRESH THE PAGE")
 })
 
 //h tags inner contents
@@ -23,11 +24,13 @@ if(data){
     h1.innerText=data.name 
     h2.innerText=data.email
     h3.innerText=data.pass
+    
 }
 
 //to delete data
 del.addEventListener("click",(e)=>{
     localStorage.removeItem("data")
+    alert("REFRESH THE PAGE")
 })
 
 //login
