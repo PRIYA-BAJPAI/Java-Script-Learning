@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3,120px);
+            grid-template-rows: repeat(3,120px);
+            gap:10px
+        }
+        .box{
+            background-color: peachpuff;
+            border: 2px solid black;
+            font-size:50px;
+            font-weight: bold;
+            
+            
+        }    
+    </style>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <div class="container">
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+
+    </div>
+    
+    <h1></h1>
+    <button id="reset">Reset</button>
+    <script src="./java.js"></script>
+</body>
+</html>
