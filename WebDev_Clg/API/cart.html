@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="display: flex; flex-wrap: wrap;background-color:rgb(132, 132, 248);">
+    <script>
+        let body=document.querySelector("body")
+        let data=JSON.parse(localStorage.getItem("item"))
+        data.map((a)=>{
+            body.innerHTML+=`<div style="border:1px solid black;width:250px;padding:10px;margin:10px;background-color:  rgb(162, 182, 188)">
+            <img src="${a.thumbnail}"width="100%">
+            <h2>${a.title}</h2>
+            <h3>${a.price}</h3>  
+            <button style="background-color:gray; padding:10px;border:2px solid black ;border-radius:5px;margin-left:20%">Remove From Cart</button>
+        `
+        })
+        
+    </script>
+</body>
+</html>
