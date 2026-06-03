@@ -1,6 +1,10 @@
 html,body{
   background-color: black;
+  color: aliceblue;
+  margin: 0;
+  padding: 0;
 }
+/* //form
 .body{
   
   background-color: darkcyan;
@@ -29,8 +33,21 @@ button{
   background-color: burlywood;
   color: black;
   border: 1px solid black;
-  /* scale: 1.5; */
+
 }
 button:active{
   scale: 0.95;
+} */
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background-color: darkslategrey;
+  /* margin: 5px; */
+}
+li{
+  margin: 10px;
+  color: antiquewhite;
 }

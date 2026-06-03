@@ -2,6 +2,13 @@
 //  import 'App.css'
 
 import Form from './Form'
+import Navbar from './Components/Navbar'
+import { Routes } from 'react-router-dom'
+import { Route } from 'react-router-dom'
+import Home from './Components/Home'
+import About from './Components/About'
+import Task from './Components/Task'
+
 //  const App = () => {
 //   let[count,setCount]=useState(0)
 //   let[color,SetColor]=useState("aquamarine")
@@ -60,7 +67,15 @@ import Form from './Form'
 const App = () => {
   return (
     <div>
-      <Form/>
+      
+      {/*<Form/>*/}
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path='/about' element={<About/>} />
+        <Route path='/task' element={<Task/>} />
+      </Routes>
+      
     </div>
   )
 }
